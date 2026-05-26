@@ -14,6 +14,7 @@
 | [GETTING_STARTED.md](./GETTING_STARTED.md) | 新玩家 | 从 0 到第一场战斗 |
 | [PLAYER_GUIDE.md](./PLAYER_GUIDE.md) | 老玩家 | 攻略、Boss 解析、隐藏内容 |
 | [TOKEN_CULTIVATION_PRODUCT_PLAN.md](./TOKEN_CULTIVATION_PRODUCT_PLAN.md) | 策划/开发 | 燃灵队列、小说化修行、token 转修为改造方案 |
+| [PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md](./PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md) | 策划/叙事/开发 | 玩家身世、五宗入门背景、固定羁绊与下一轮触发方案 |
 
 ---
 
