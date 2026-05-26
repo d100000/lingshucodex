@@ -1,0 +1,1671 @@
+{
+  "meta": {
+    "style": "国风修仙、水墨低对比、卡片竖版画像",
+    "portrait_size": "512x768",
+    "background_size": "1920x1080",
+    "generated_by": "scripts/generate_xianxia_assets.py",
+    "counts": {
+      "sects": 5,
+      "players": 45,
+      "enemies": 113,
+      "bosses": 21,
+      "portraits": 184,
+      "backgrounds": 1,
+      "total": 185
+    }
+  },
+  "sects": [
+    {
+      "id": "canglan",
+      "name": "沧澜剑派",
+      "path": "/images/portraits/sects/canglan.png"
+    },
+    {
+      "id": "tianji",
+      "name": "天机阁",
+      "path": "/images/portraits/sects/tianji.png"
+    },
+    {
+      "id": "xuanji",
+      "name": "玄机宗",
+      "path": "/images/portraits/sects/xuanji.png"
+    },
+    {
+      "id": "qingming",
+      "name": "青冥派",
+      "path": "/images/portraits/sects/qingming.png"
+    },
+    {
+      "id": "yueyin",
+      "name": "月隐宫",
+      "path": "/images/portraits/sects/yueyin.png"
+    }
+  ],
+  "players": [
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "qi",
+      "realm_name": "炼气",
+      "path": "/images/portraits/players/canglan/qi.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "foundation",
+      "realm_name": "筑基",
+      "path": "/images/portraits/players/canglan/foundation.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "golden",
+      "realm_name": "金丹",
+      "path": "/images/portraits/players/canglan/golden.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "yuanying",
+      "realm_name": "元婴",
+      "path": "/images/portraits/players/canglan/yuanying.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "huashen",
+      "realm_name": "化神",
+      "path": "/images/portraits/players/canglan/huashen.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "hetishi",
+      "realm_name": "合体",
+      "path": "/images/portraits/players/canglan/hetishi.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "dacheng",
+      "realm_name": "大乘",
+      "path": "/images/portraits/players/canglan/dacheng.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "dujie",
+      "realm_name": "渡劫",
+      "path": "/images/portraits/players/canglan/dujie.png"
+    },
+    {
+      "sect_id": "canglan",
+      "sect_name": "沧澜剑派",
+      "realm": "feisheng",
+      "realm_name": "飞升",
+      "path": "/images/portraits/players/canglan/feisheng.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "qi",
+      "realm_name": "炼气",
+      "path": "/images/portraits/players/tianji/qi.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "foundation",
+      "realm_name": "筑基",
+      "path": "/images/portraits/players/tianji/foundation.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "golden",
+      "realm_name": "金丹",
+      "path": "/images/portraits/players/tianji/golden.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "yuanying",
+      "realm_name": "元婴",
+      "path": "/images/portraits/players/tianji/yuanying.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "huashen",
+      "realm_name": "化神",
+      "path": "/images/portraits/players/tianji/huashen.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "hetishi",
+      "realm_name": "合体",
+      "path": "/images/portraits/players/tianji/hetishi.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "dacheng",
+      "realm_name": "大乘",
+      "path": "/images/portraits/players/tianji/dacheng.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "dujie",
+      "realm_name": "渡劫",
+      "path": "/images/portraits/players/tianji/dujie.png"
+    },
+    {
+      "sect_id": "tianji",
+      "sect_name": "天机阁",
+      "realm": "feisheng",
+      "realm_name": "飞升",
+      "path": "/images/portraits/players/tianji/feisheng.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "qi",
+      "realm_name": "炼气",
+      "path": "/images/portraits/players/xuanji/qi.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "foundation",
+      "realm_name": "筑基",
+      "path": "/images/portraits/players/xuanji/foundation.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "golden",
+      "realm_name": "金丹",
+      "path": "/images/portraits/players/xuanji/golden.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "yuanying",
+      "realm_name": "元婴",
+      "path": "/images/portraits/players/xuanji/yuanying.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "huashen",
+      "realm_name": "化神",
+      "path": "/images/portraits/players/xuanji/huashen.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "hetishi",
+      "realm_name": "合体",
+      "path": "/images/portraits/players/xuanji/hetishi.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "dacheng",
+      "realm_name": "大乘",
+      "path": "/images/portraits/players/xuanji/dacheng.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "dujie",
+      "realm_name": "渡劫",
+      "path": "/images/portraits/players/xuanji/dujie.png"
+    },
+    {
+      "sect_id": "xuanji",
+      "sect_name": "玄机宗",
+      "realm": "feisheng",
+      "realm_name": "飞升",
+      "path": "/images/portraits/players/xuanji/feisheng.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "qi",
+      "realm_name": "炼气",
+      "path": "/images/portraits/players/qingming/qi.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "foundation",
+      "realm_name": "筑基",
+      "path": "/images/portraits/players/qingming/foundation.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "golden",
+      "realm_name": "金丹",
+      "path": "/images/portraits/players/qingming/golden.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "yuanying",
+      "realm_name": "元婴",
+      "path": "/images/portraits/players/qingming/yuanying.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "huashen",
+      "realm_name": "化神",
+      "path": "/images/portraits/players/qingming/huashen.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "hetishi",
+      "realm_name": "合体",
+      "path": "/images/portraits/players/qingming/hetishi.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "dacheng",
+      "realm_name": "大乘",
+      "path": "/images/portraits/players/qingming/dacheng.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "dujie",
+      "realm_name": "渡劫",
+      "path": "/images/portraits/players/qingming/dujie.png"
+    },
+    {
+      "sect_id": "qingming",
+      "sect_name": "青冥派",
+      "realm": "feisheng",
+      "realm_name": "飞升",
+      "path": "/images/portraits/players/qingming/feisheng.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "qi",
+      "realm_name": "炼气",
+      "path": "/images/portraits/players/yueyin/qi.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "foundation",
+      "realm_name": "筑基",
+      "path": "/images/portraits/players/yueyin/foundation.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "golden",
+      "realm_name": "金丹",
+      "path": "/images/portraits/players/yueyin/golden.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "yuanying",
+      "realm_name": "元婴",
+      "path": "/images/portraits/players/yueyin/yuanying.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "huashen",
+      "realm_name": "化神",
+      "path": "/images/portraits/players/yueyin/huashen.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "hetishi",
+      "realm_name": "合体",
+      "path": "/images/portraits/players/yueyin/hetishi.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "dacheng",
+      "realm_name": "大乘",
+      "path": "/images/portraits/players/yueyin/dacheng.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "dujie",
+      "realm_name": "渡劫",
+      "path": "/images/portraits/players/yueyin/dujie.png"
+    },
+    {
+      "sect_id": "yueyin",
+      "sect_name": "月隐宫",
+      "realm": "feisheng",
+      "realm_name": "飞升",
+      "path": "/images/portraits/players/yueyin/feisheng.png"
+    }
+  ],
+  "enemies": [
+    {
+      "key": "fox_01",
+      "id": "fox_01",
+      "is_legacy_alias": false,
+      "name": "山林小狐",
+      "clan": "山林狐妖族",
+      "tier": "low",
+      "level": 3,
+      "path": "/images/portraits/enemies/fox_01.png"
+    },
+    {
+      "key": "fox_02",
+      "id": "fox_02",
+      "is_legacy_alias": false,
+      "name": "石板狐",
+      "clan": "山林狐妖族",
+      "tier": "low",
+      "level": 6,
+      "path": "/images/portraits/enemies/fox_02.png"
+    },
+    {
+      "key": "fox_03",
+      "id": "fox_03",
+      "is_legacy_alias": false,
+      "name": "双尾赤狐",
+      "clan": "山林狐妖族",
+      "tier": "low",
+      "level": 10,
+      "path": "/images/portraits/enemies/fox_03.png"
+    },
+    {
+      "key": "fox_04",
+      "id": "fox_04",
+      "is_legacy_alias": false,
+      "name": "三尾灵狐",
+      "clan": "山林狐妖族",
+      "tier": "mid",
+      "level": 16,
+      "path": "/images/portraits/enemies/fox_04.png"
+    },
+    {
+      "key": "fox_05",
+      "id": "fox_05",
+      "is_legacy_alias": false,
+      "name": "四尾狐婢",
+      "clan": "山林狐妖族",
+      "tier": "mid",
+      "level": 22,
+      "path": "/images/portraits/enemies/fox_05.png"
+    },
+    {
+      "key": "fox_06",
+      "id": "fox_06",
+      "is_legacy_alias": false,
+      "name": "五尾媚妖",
+      "clan": "山林狐妖族",
+      "tier": "mid",
+      "level": 30,
+      "path": "/images/portraits/enemies/fox_06.png"
+    },
+    {
+      "key": "fox_07",
+      "id": "fox_07",
+      "is_legacy_alias": false,
+      "name": "六尾天狐",
+      "clan": "山林狐妖族",
+      "tier": "high",
+      "level": 42,
+      "path": "/images/portraits/enemies/fox_07.png"
+    },
+    {
+      "key": "fox_08",
+      "id": "fox_08",
+      "is_legacy_alias": false,
+      "name": "七尾狐圣",
+      "clan": "山林狐妖族",
+      "tier": "high",
+      "level": 60,
+      "path": "/images/portraits/enemies/fox_08.png"
+    },
+    {
+      "key": "fox_09",
+      "id": "fox_09",
+      "is_legacy_alias": false,
+      "name": "八尾妖王",
+      "clan": "山林狐妖族",
+      "tier": "myth",
+      "level": 80,
+      "path": "/images/portraits/enemies/fox_09.png"
+    },
+    {
+      "key": "bird_01",
+      "id": "bird_01",
+      "is_legacy_alias": false,
+      "name": "小灵雀",
+      "clan": "灵雀飞鸟族",
+      "tier": "low",
+      "level": 4,
+      "path": "/images/portraits/enemies/bird_01.png"
+    },
+    {
+      "key": "bird_02",
+      "id": "bird_02",
+      "is_legacy_alias": false,
+      "name": "彩翎雀",
+      "clan": "灵雀飞鸟族",
+      "tier": "low",
+      "level": 8,
+      "path": "/images/portraits/enemies/bird_02.png"
+    },
+    {
+      "key": "bird_03",
+      "id": "bird_03",
+      "is_legacy_alias": false,
+      "name": "金喙隼",
+      "clan": "灵雀飞鸟族",
+      "tier": "low",
+      "level": 12,
+      "path": "/images/portraits/enemies/bird_03.png"
+    },
+    {
+      "key": "bird_04",
+      "id": "bird_04",
+      "is_legacy_alias": false,
+      "name": "幻翼蝶",
+      "clan": "灵雀飞鸟族",
+      "tier": "mid",
+      "level": 18,
+      "path": "/images/portraits/enemies/bird_04.png"
+    },
+    {
+      "key": "bird_05",
+      "id": "bird_05",
+      "is_legacy_alias": false,
+      "name": "雷击鹰",
+      "clan": "灵雀飞鸟族",
+      "tier": "mid",
+      "level": 25,
+      "path": "/images/portraits/enemies/bird_05.png"
+    },
+    {
+      "key": "bird_06",
+      "id": "bird_06",
+      "is_legacy_alias": false,
+      "name": "孔雀仙翎",
+      "clan": "灵雀飞鸟族",
+      "tier": "mid",
+      "level": 33,
+      "path": "/images/portraits/enemies/bird_06.png"
+    },
+    {
+      "key": "bird_07",
+      "id": "bird_07",
+      "is_legacy_alias": false,
+      "name": "鹰王",
+      "clan": "灵雀飞鸟族",
+      "tier": "high",
+      "level": 48,
+      "path": "/images/portraits/enemies/bird_07.png"
+    },
+    {
+      "key": "bird_08",
+      "id": "bird_08",
+      "is_legacy_alias": false,
+      "name": "凤雏",
+      "clan": "灵雀飞鸟族",
+      "tier": "high",
+      "level": 65,
+      "path": "/images/portraits/enemies/bird_08.png"
+    },
+    {
+      "key": "bird_09",
+      "id": "bird_09",
+      "is_legacy_alias": false,
+      "name": "朱雀之裔",
+      "clan": "灵雀飞鸟族",
+      "tier": "myth",
+      "level": 85,
+      "path": "/images/portraits/enemies/bird_09.png"
+    },
+    {
+      "key": "serp_01",
+      "id": "serp_01",
+      "is_legacy_alias": false,
+      "name": "水蛇",
+      "clan": "蛇蟒族",
+      "tier": "low",
+      "level": 5,
+      "path": "/images/portraits/enemies/serp_01.png"
+    },
+    {
+      "key": "serp_02",
+      "id": "serp_02",
+      "is_legacy_alias": false,
+      "name": "草丛青蛇",
+      "clan": "蛇蟒族",
+      "tier": "low",
+      "level": 9,
+      "path": "/images/portraits/enemies/serp_02.png"
+    },
+    {
+      "key": "serp_03",
+      "id": "serp_03",
+      "is_legacy_alias": false,
+      "name": "毒齿乌蛇",
+      "clan": "蛇蟒族",
+      "tier": "low",
+      "level": 14,
+      "path": "/images/portraits/enemies/serp_03.png"
+    },
+    {
+      "key": "serp_04",
+      "id": "serp_04",
+      "is_legacy_alias": false,
+      "name": "山蟒",
+      "clan": "蛇蟒族",
+      "tier": "mid",
+      "level": 21,
+      "path": "/images/portraits/enemies/serp_04.png"
+    },
+    {
+      "key": "serp_05",
+      "id": "serp_05",
+      "is_legacy_alias": false,
+      "name": "毒蟒王",
+      "clan": "蛇蟒族",
+      "tier": "mid",
+      "level": 30,
+      "path": "/images/portraits/enemies/serp_05.png"
+    },
+    {
+      "key": "serp_06",
+      "id": "serp_06",
+      "is_legacy_alias": false,
+      "name": "九头蛇魔",
+      "clan": "蛇蟒族",
+      "tier": "mid",
+      "level": 38,
+      "path": "/images/portraits/enemies/serp_06.png"
+    },
+    {
+      "key": "serp_07",
+      "id": "serp_07",
+      "is_legacy_alias": false,
+      "name": "白蟒精",
+      "clan": "蛇蟒族",
+      "tier": "high",
+      "level": 52,
+      "path": "/images/portraits/enemies/serp_07.png"
+    },
+    {
+      "key": "serp_08",
+      "id": "serp_08",
+      "is_legacy_alias": false,
+      "name": "玄武之裔",
+      "clan": "蛇蟒族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/serp_08.png"
+    },
+    {
+      "key": "serp_09",
+      "id": "serp_09",
+      "is_legacy_alias": false,
+      "name": "应龙化蛇",
+      "clan": "蛇蟒族",
+      "tier": "myth",
+      "level": 90,
+      "path": "/images/portraits/enemies/serp_09.png"
+    },
+    {
+      "key": "beast_01",
+      "id": "beast_01",
+      "is_legacy_alias": false,
+      "name": "幼狼",
+      "clan": "猛兽族",
+      "tier": "low",
+      "level": 6,
+      "path": "/images/portraits/enemies/beast_01.png"
+    },
+    {
+      "key": "beast_02",
+      "id": "beast_02",
+      "is_legacy_alias": false,
+      "name": "灰狼",
+      "clan": "猛兽族",
+      "tier": "low",
+      "level": 11,
+      "path": "/images/portraits/enemies/beast_02.png"
+    },
+    {
+      "key": "beast_03",
+      "id": "beast_03",
+      "is_legacy_alias": false,
+      "name": "山豹",
+      "clan": "猛兽族",
+      "tier": "low",
+      "level": 15,
+      "path": "/images/portraits/enemies/beast_03.png"
+    },
+    {
+      "key": "beast_04",
+      "id": "beast_04",
+      "is_legacy_alias": false,
+      "name": "雪豹仙",
+      "clan": "猛兽族",
+      "tier": "mid",
+      "level": 24,
+      "path": "/images/portraits/enemies/beast_04.png"
+    },
+    {
+      "key": "beast_05",
+      "id": "beast_05",
+      "is_legacy_alias": false,
+      "name": "怒虎",
+      "clan": "猛兽族",
+      "tier": "mid",
+      "level": 32,
+      "path": "/images/portraits/enemies/beast_05.png"
+    },
+    {
+      "key": "beast_06",
+      "id": "beast_06",
+      "is_legacy_alias": false,
+      "name": "金毛獬豸",
+      "clan": "猛兽族",
+      "tier": "mid",
+      "level": 40,
+      "path": "/images/portraits/enemies/beast_06.png"
+    },
+    {
+      "key": "beast_07",
+      "id": "beast_07",
+      "is_legacy_alias": false,
+      "name": "白虎魂",
+      "clan": "猛兽族",
+      "tier": "high",
+      "level": 55,
+      "path": "/images/portraits/enemies/beast_07.png"
+    },
+    {
+      "key": "beast_08",
+      "id": "beast_08",
+      "is_legacy_alias": false,
+      "name": "虎王相柳",
+      "clan": "猛兽族",
+      "tier": "high",
+      "level": 72,
+      "path": "/images/portraits/enemies/beast_08.png"
+    },
+    {
+      "key": "beast_09",
+      "id": "beast_09",
+      "is_legacy_alias": false,
+      "name": "白虎正神",
+      "clan": "猛兽族",
+      "tier": "myth",
+      "level": 92,
+      "path": "/images/portraits/enemies/beast_09.png"
+    },
+    {
+      "key": "herb_01",
+      "id": "herb_01",
+      "is_legacy_alias": false,
+      "name": "灵芝童子",
+      "clan": "草木精怪族",
+      "tier": "low",
+      "level": 4,
+      "path": "/images/portraits/enemies/herb_01.png"
+    },
+    {
+      "key": "herb_02",
+      "id": "herb_02",
+      "is_legacy_alias": false,
+      "name": "藤蔓魔",
+      "clan": "草木精怪族",
+      "tier": "low",
+      "level": 9,
+      "path": "/images/portraits/enemies/herb_02.png"
+    },
+    {
+      "key": "herb_03",
+      "id": "herb_03",
+      "is_legacy_alias": false,
+      "name": "桃花妖",
+      "clan": "草木精怪族",
+      "tier": "low",
+      "level": 13,
+      "path": "/images/portraits/enemies/herb_03.png"
+    },
+    {
+      "key": "herb_04",
+      "id": "herb_04",
+      "is_legacy_alias": false,
+      "name": "丹木老人",
+      "clan": "草木精怪族",
+      "tier": "mid",
+      "level": 20,
+      "path": "/images/portraits/enemies/herb_04.png"
+    },
+    {
+      "key": "herb_05",
+      "id": "herb_05",
+      "is_legacy_alias": false,
+      "name": "百花娘子",
+      "clan": "草木精怪族",
+      "tier": "mid",
+      "level": 28,
+      "path": "/images/portraits/enemies/herb_05.png"
+    },
+    {
+      "key": "herb_06",
+      "id": "herb_06",
+      "is_legacy_alias": false,
+      "name": "千年树王",
+      "clan": "草木精怪族",
+      "tier": "mid",
+      "level": 36,
+      "path": "/images/portraits/enemies/herb_06.png"
+    },
+    {
+      "key": "herb_07",
+      "id": "herb_07",
+      "is_legacy_alias": false,
+      "name": "人参精",
+      "clan": "草木精怪族",
+      "tier": "high",
+      "level": 50,
+      "path": "/images/portraits/enemies/herb_07.png"
+    },
+    {
+      "key": "herb_08",
+      "id": "herb_08",
+      "is_legacy_alias": false,
+      "name": "灵芝祖宗",
+      "clan": "草木精怪族",
+      "tier": "high",
+      "level": 68,
+      "path": "/images/portraits/enemies/herb_08.png"
+    },
+    {
+      "key": "herb_09",
+      "id": "herb_09",
+      "is_legacy_alias": false,
+      "name": "神农魂木",
+      "clan": "草木精怪族",
+      "tier": "myth",
+      "level": 88,
+      "path": "/images/portraits/enemies/herb_09.png"
+    },
+    {
+      "key": "ghost_01",
+      "id": "ghost_01",
+      "is_legacy_alias": false,
+      "name": "野鬼",
+      "clan": "鬼族",
+      "tier": "low",
+      "level": 8,
+      "path": "/images/portraits/enemies/ghost_01.png"
+    },
+    {
+      "key": "ghost_02",
+      "id": "ghost_02",
+      "is_legacy_alias": false,
+      "name": "怨灵",
+      "clan": "鬼族",
+      "tier": "low",
+      "level": 13,
+      "path": "/images/portraits/enemies/ghost_02.png"
+    },
+    {
+      "key": "ghost_03",
+      "id": "ghost_03",
+      "is_legacy_alias": false,
+      "name": "厉鬼",
+      "clan": "鬼族",
+      "tier": "low",
+      "level": 18,
+      "path": "/images/portraits/enemies/ghost_03.png"
+    },
+    {
+      "key": "ghost_04",
+      "id": "ghost_04",
+      "is_legacy_alias": false,
+      "name": "阴煞鬼将",
+      "clan": "鬼族",
+      "tier": "mid",
+      "level": 26,
+      "path": "/images/portraits/enemies/ghost_04.png"
+    },
+    {
+      "key": "ghost_05",
+      "id": "ghost_05",
+      "is_legacy_alias": false,
+      "name": "无头将军",
+      "clan": "鬼族",
+      "tier": "mid",
+      "level": 34,
+      "path": "/images/portraits/enemies/ghost_05.png"
+    },
+    {
+      "key": "ghost_06",
+      "id": "ghost_06",
+      "is_legacy_alias": false,
+      "name": "牛头马面",
+      "clan": "鬼族",
+      "tier": "mid",
+      "level": 42,
+      "path": "/images/portraits/enemies/ghost_06.png"
+    },
+    {
+      "key": "ghost_07",
+      "id": "ghost_07",
+      "is_legacy_alias": false,
+      "name": "白无常",
+      "clan": "鬼族",
+      "tier": "high",
+      "level": 58,
+      "path": "/images/portraits/enemies/ghost_07.png"
+    },
+    {
+      "key": "ghost_08",
+      "id": "ghost_08",
+      "is_legacy_alias": false,
+      "name": "黑无常",
+      "clan": "鬼族",
+      "tier": "high",
+      "level": 76,
+      "path": "/images/portraits/enemies/ghost_08.png"
+    },
+    {
+      "key": "ghost_09",
+      "id": "ghost_09",
+      "is_legacy_alias": false,
+      "name": "阎罗代行",
+      "clan": "鬼族",
+      "tier": "myth",
+      "level": 95,
+      "path": "/images/portraits/enemies/ghost_09.png"
+    },
+    {
+      "key": "dragon_01",
+      "id": "dragon_01",
+      "is_legacy_alias": false,
+      "name": "蛟",
+      "clan": "龙族",
+      "tier": "mid",
+      "level": 35,
+      "path": "/images/portraits/enemies/dragon_01.png"
+    },
+    {
+      "key": "dragon_02",
+      "id": "dragon_02",
+      "is_legacy_alias": false,
+      "name": "蜃龙",
+      "clan": "龙族",
+      "tier": "mid",
+      "level": 45,
+      "path": "/images/portraits/enemies/dragon_02.png"
+    },
+    {
+      "key": "dragon_03",
+      "id": "dragon_03",
+      "is_legacy_alias": false,
+      "name": "螭龙",
+      "clan": "龙族",
+      "tier": "high",
+      "level": 55,
+      "path": "/images/portraits/enemies/dragon_03.png"
+    },
+    {
+      "key": "dragon_04",
+      "id": "dragon_04",
+      "is_legacy_alias": false,
+      "name": "应龙",
+      "clan": "龙族",
+      "tier": "high",
+      "level": 65,
+      "path": "/images/portraits/enemies/dragon_04.png"
+    },
+    {
+      "key": "dragon_05",
+      "id": "dragon_05",
+      "is_legacy_alias": false,
+      "name": "螳螂龙",
+      "clan": "龙族",
+      "tier": "high",
+      "level": 75,
+      "path": "/images/portraits/enemies/dragon_05.png"
+    },
+    {
+      "key": "dragon_06",
+      "id": "dragon_06",
+      "is_legacy_alias": false,
+      "name": "墨龙",
+      "clan": "龙族",
+      "tier": "myth",
+      "level": 88,
+      "path": "/images/portraits/enemies/dragon_06.png"
+    },
+    {
+      "key": "dragon_07",
+      "id": "dragon_07",
+      "is_legacy_alias": false,
+      "name": "青龙",
+      "clan": "龙族",
+      "tier": "myth",
+      "level": 100,
+      "path": "/images/portraits/enemies/dragon_07.png"
+    },
+    {
+      "key": "dragon_08",
+      "id": "dragon_08",
+      "is_legacy_alias": false,
+      "name": "祖龙残魂",
+      "clan": "龙族",
+      "tier": "myth",
+      "level": 110,
+      "path": "/images/portraits/enemies/dragon_08.png"
+    },
+    {
+      "key": "dragon_09",
+      "id": "dragon_09",
+      "is_legacy_alias": false,
+      "name": "真龙天子",
+      "clan": "龙族",
+      "tier": "myth",
+      "level": 130,
+      "path": "/images/portraits/enemies/dragon_09.png"
+    },
+    {
+      "key": "div_01",
+      "id": "div_01",
+      "is_legacy_alias": false,
+      "name": "朱雀雏",
+      "clan": "神兽族",
+      "tier": "high",
+      "level": 50,
+      "path": "/images/portraits/enemies/div_01.png"
+    },
+    {
+      "key": "div_02",
+      "id": "div_02",
+      "is_legacy_alias": false,
+      "name": "玄武幼龟",
+      "clan": "神兽族",
+      "tier": "high",
+      "level": 60,
+      "path": "/images/portraits/enemies/div_02.png"
+    },
+    {
+      "key": "div_03",
+      "id": "div_03",
+      "is_legacy_alias": false,
+      "name": "白虎兽",
+      "clan": "神兽族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/div_03.png"
+    },
+    {
+      "key": "div_04",
+      "id": "div_04",
+      "is_legacy_alias": false,
+      "name": "青龙幼苗",
+      "clan": "神兽族",
+      "tier": "high",
+      "level": 75,
+      "path": "/images/portraits/enemies/div_04.png"
+    },
+    {
+      "key": "div_05",
+      "id": "div_05",
+      "is_legacy_alias": false,
+      "name": "麒麟驹",
+      "clan": "神兽族",
+      "tier": "myth",
+      "level": 85,
+      "path": "/images/portraits/enemies/div_05.png"
+    },
+    {
+      "key": "div_06",
+      "id": "div_06",
+      "is_legacy_alias": false,
+      "name": "孔雀明王坐骑",
+      "clan": "神兽族",
+      "tier": "myth",
+      "level": 95,
+      "path": "/images/portraits/enemies/div_06.png"
+    },
+    {
+      "key": "div_07",
+      "id": "div_07",
+      "is_legacy_alias": false,
+      "name": "九尾天狐(神兽级)",
+      "clan": "神兽族",
+      "tier": "myth",
+      "level": 105,
+      "path": "/images/portraits/enemies/div_07.png"
+    },
+    {
+      "key": "div_08",
+      "id": "div_08",
+      "is_legacy_alias": false,
+      "name": "应龙正神",
+      "clan": "神兽族",
+      "tier": "myth",
+      "level": 115,
+      "path": "/images/portraits/enemies/div_08.png"
+    },
+    {
+      "key": "div_09",
+      "id": "div_09",
+      "is_legacy_alias": false,
+      "name": "凤凰涅槃",
+      "clan": "神兽族",
+      "tier": "myth",
+      "level": 125,
+      "path": "/images/portraits/enemies/div_09.png"
+    },
+    {
+      "key": "anc_01",
+      "id": "anc_01",
+      "is_legacy_alias": false,
+      "name": "穷奇幼崽",
+      "clan": "上古凶兽族",
+      "tier": "high",
+      "level": 65,
+      "path": "/images/portraits/enemies/anc_01.png"
+    },
+    {
+      "key": "anc_02",
+      "id": "anc_02",
+      "is_legacy_alias": false,
+      "name": "饕餮",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 85,
+      "path": "/images/portraits/enemies/anc_02.png"
+    },
+    {
+      "key": "anc_03",
+      "id": "anc_03",
+      "is_legacy_alias": false,
+      "name": "梼杌",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 95,
+      "path": "/images/portraits/enemies/anc_03.png"
+    },
+    {
+      "key": "anc_04",
+      "id": "anc_04",
+      "is_legacy_alias": false,
+      "name": "混沌",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 105,
+      "path": "/images/portraits/enemies/anc_04.png"
+    },
+    {
+      "key": "anc_05",
+      "id": "anc_05",
+      "is_legacy_alias": false,
+      "name": "九婴",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 115,
+      "path": "/images/portraits/enemies/anc_05.png"
+    },
+    {
+      "key": "anc_06",
+      "id": "anc_06",
+      "is_legacy_alias": false,
+      "name": "相柳",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 125,
+      "path": "/images/portraits/enemies/anc_06.png"
+    },
+    {
+      "key": "anc_07",
+      "id": "anc_07",
+      "is_legacy_alias": false,
+      "name": "蚩尤之灵",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 135,
+      "path": "/images/portraits/enemies/anc_07.png"
+    },
+    {
+      "key": "anc_08",
+      "id": "anc_08",
+      "is_legacy_alias": false,
+      "name": "夸父之心",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 145,
+      "path": "/images/portraits/enemies/anc_08.png"
+    },
+    {
+      "key": "anc_09",
+      "id": "anc_09",
+      "is_legacy_alias": false,
+      "name": "盘古残魂",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 160,
+      "path": "/images/portraits/enemies/anc_09.png"
+    },
+    {
+      "key": "dem_01",
+      "id": "dem_01",
+      "is_legacy_alias": false,
+      "name": "迷心人",
+      "clan": "魔修族",
+      "tier": "mid",
+      "level": 30,
+      "path": "/images/portraits/enemies/dem_01.png"
+    },
+    {
+      "key": "dem_02",
+      "id": "dem_02",
+      "is_legacy_alias": false,
+      "name": "嗜血修",
+      "clan": "魔修族",
+      "tier": "mid",
+      "level": 40,
+      "path": "/images/portraits/enemies/dem_02.png"
+    },
+    {
+      "key": "dem_03",
+      "id": "dem_03",
+      "is_legacy_alias": false,
+      "name": "傀儡师",
+      "clan": "魔修族",
+      "tier": "high",
+      "level": 55,
+      "path": "/images/portraits/enemies/dem_03.png"
+    },
+    {
+      "key": "dem_04",
+      "id": "dem_04",
+      "is_legacy_alias": false,
+      "name": "夺魂者",
+      "clan": "魔修族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/dem_04.png"
+    },
+    {
+      "key": "dem_05",
+      "id": "dem_05",
+      "is_legacy_alias": false,
+      "name": "黑袍人",
+      "clan": "魔修族",
+      "tier": "high",
+      "level": 80,
+      "path": "/images/portraits/enemies/dem_05.png"
+    },
+    {
+      "key": "dem_06",
+      "id": "dem_06",
+      "is_legacy_alias": false,
+      "name": "魔尊化身",
+      "clan": "魔修族",
+      "tier": "myth",
+      "level": 95,
+      "path": "/images/portraits/enemies/dem_06.png"
+    },
+    {
+      "key": "dem_07",
+      "id": "dem_07",
+      "is_legacy_alias": false,
+      "name": "嗜灵狂魔",
+      "clan": "魔修族",
+      "tier": "myth",
+      "level": 105,
+      "path": "/images/portraits/enemies/dem_07.png"
+    },
+    {
+      "key": "dem_08",
+      "id": "dem_08",
+      "is_legacy_alias": false,
+      "name": "魔界使者",
+      "clan": "魔修族",
+      "tier": "myth",
+      "level": 115,
+      "path": "/images/portraits/enemies/dem_08.png"
+    },
+    {
+      "key": "dem_09",
+      "id": "dem_09",
+      "is_legacy_alias": false,
+      "name": "降世魔王",
+      "clan": "魔修族",
+      "tier": "myth",
+      "level": 130,
+      "path": "/images/portraits/enemies/dem_09.png"
+    },
+    {
+      "key": "art_01",
+      "id": "art_01",
+      "is_legacy_alias": false,
+      "name": "断剑残魂",
+      "clan": "仙器之灵族",
+      "tier": "high",
+      "level": 60,
+      "path": "/images/portraits/enemies/art_01.png"
+    },
+    {
+      "key": "art_02",
+      "id": "art_02",
+      "is_legacy_alias": false,
+      "name": "古镜怨灵",
+      "clan": "仙器之灵族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/art_02.png"
+    },
+    {
+      "key": "art_03",
+      "id": "art_03",
+      "is_legacy_alias": false,
+      "name": "玉佩仙子",
+      "clan": "仙器之灵族",
+      "tier": "high",
+      "level": 80,
+      "path": "/images/portraits/enemies/art_03.png"
+    },
+    {
+      "key": "art_04",
+      "id": "art_04",
+      "is_legacy_alias": false,
+      "name": "金钟巨灵",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 90,
+      "path": "/images/portraits/enemies/art_04.png"
+    },
+    {
+      "key": "art_05",
+      "id": "art_05",
+      "is_legacy_alias": false,
+      "name": "墨笔仙翁",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 100,
+      "path": "/images/portraits/enemies/art_05.png"
+    },
+    {
+      "key": "art_06",
+      "id": "art_06",
+      "is_legacy_alias": false,
+      "name": "九鼎之灵",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 110,
+      "path": "/images/portraits/enemies/art_06.png"
+    },
+    {
+      "key": "art_07",
+      "id": "art_07",
+      "is_legacy_alias": false,
+      "name": "天瓶之灵",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 125,
+      "path": "/images/portraits/enemies/art_07.png"
+    },
+    {
+      "key": "art_08",
+      "id": "art_08",
+      "is_legacy_alias": false,
+      "name": "炼丹炉魂",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 140,
+      "path": "/images/portraits/enemies/art_08.png"
+    },
+    {
+      "key": "art_09",
+      "id": "art_09",
+      "is_legacy_alias": false,
+      "name": "盘古斧灵",
+      "clan": "仙器之灵族",
+      "tier": "myth",
+      "level": 160,
+      "path": "/images/portraits/enemies/art_09.png"
+    },
+    {
+      "key": "alien_01",
+      "id": "alien_01",
+      "is_legacy_alias": false,
+      "name": "异界刺客",
+      "clan": "异域生灵族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/alien_01.png"
+    },
+    {
+      "key": "alien_02",
+      "id": "alien_02",
+      "is_legacy_alias": false,
+      "name": "迷雾行者",
+      "clan": "异域生灵族",
+      "tier": "high",
+      "level": 85,
+      "path": "/images/portraits/enemies/alien_02.png"
+    },
+    {
+      "key": "alien_03",
+      "id": "alien_03",
+      "is_legacy_alias": false,
+      "name": "晶族战士",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 95,
+      "path": "/images/portraits/enemies/alien_03.png"
+    },
+    {
+      "key": "alien_04",
+      "id": "alien_04",
+      "is_legacy_alias": false,
+      "name": "深渊使徒",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 105,
+      "path": "/images/portraits/enemies/alien_04.png"
+    },
+    {
+      "key": "alien_05",
+      "id": "alien_05",
+      "is_legacy_alias": false,
+      "name": "时间游者",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 115,
+      "path": "/images/portraits/enemies/alien_05.png"
+    },
+    {
+      "key": "alien_06",
+      "id": "alien_06",
+      "is_legacy_alias": false,
+      "name": "维度割裂者",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 125,
+      "path": "/images/portraits/enemies/alien_06.png"
+    },
+    {
+      "key": "alien_07",
+      "id": "alien_07",
+      "is_legacy_alias": false,
+      "name": "星河使者",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 140,
+      "path": "/images/portraits/enemies/alien_07.png"
+    },
+    {
+      "key": "alien_08",
+      "id": "alien_08",
+      "is_legacy_alias": false,
+      "name": "造物之主使徒",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 155,
+      "path": "/images/portraits/enemies/alien_08.png"
+    },
+    {
+      "key": "alien_09",
+      "id": "alien_09",
+      "is_legacy_alias": false,
+      "name": "界外神祇",
+      "clan": "异域生灵族",
+      "tier": "myth",
+      "level": 175,
+      "path": "/images/portraits/enemies/alien_09.png"
+    },
+    {
+      "key": "wild_fox",
+      "id": "fox_01",
+      "is_legacy_alias": true,
+      "name": "山林小狐",
+      "clan": "山林狐妖族",
+      "tier": "low",
+      "level": 3,
+      "path": "/images/portraits/enemies/wild_fox.png"
+    },
+    {
+      "key": "spirit_sparrow",
+      "id": "bird_01",
+      "is_legacy_alias": true,
+      "name": "小灵雀",
+      "clan": "灵雀飞鸟族",
+      "tier": "low",
+      "level": 4,
+      "path": "/images/portraits/enemies/spirit_sparrow.png"
+    },
+    {
+      "key": "poison_serpent",
+      "id": "serp_05",
+      "is_legacy_alias": true,
+      "name": "毒蟒王",
+      "clan": "蛇蟒族",
+      "tier": "mid",
+      "level": 30,
+      "path": "/images/portraits/enemies/poison_serpent.png"
+    },
+    {
+      "key": "lightning_qilin",
+      "id": "div_03",
+      "is_legacy_alias": true,
+      "name": "白虎兽",
+      "clan": "神兽族",
+      "tier": "high",
+      "level": 70,
+      "path": "/images/portraits/enemies/lightning_qilin.png"
+    },
+    {
+      "key": "heavenly_demon_king",
+      "id": "anc_07",
+      "is_legacy_alias": true,
+      "name": "蚩尤之灵",
+      "clan": "上古凶兽族",
+      "tier": "myth",
+      "level": 135,
+      "path": "/images/portraits/enemies/heavenly_demon_king.png"
+    }
+  ],
+  "bosses": [
+    {
+      "id": "boss_canglan_traitor",
+      "name": "墨魔·林泽",
+      "title": "沧澜叛徒",
+      "sect_id": "canglan",
+      "level": 40,
+      "path": "/images/portraits/bosses/boss_canglan_traitor.png"
+    },
+    {
+      "id": "boss_tianji_traitor",
+      "name": "齿轮鬼·托马斯",
+      "title": "天机叛徒",
+      "sect_id": "tianji",
+      "level": 42,
+      "path": "/images/portraits/bosses/boss_tianji_traitor.png"
+    },
+    {
+      "id": "boss_deepmind",
+      "name": "哈萨长老",
+      "title": "深玄阁阁主",
+      "sect_id": "deepmind_pavilion",
+      "level": 110,
+      "path": "/images/portraits/bosses/boss_deepmind.png"
+    },
+    {
+      "id": "boss_canglan_supreme",
+      "name": "阿莫迪克斯",
+      "title": "沧澜山主",
+      "sect_id": "canglan",
+      "level": 145,
+      "path": "/images/portraits/bosses/boss_canglan_supreme.png"
+    },
+    {
+      "id": "boss_tianji_supreme",
+      "name": "山姆道君",
+      "title": "天机阁掌教",
+      "sect_id": "tianji",
+      "level": 148,
+      "path": "/images/portraits/bosses/boss_tianji_supreme.png"
+    },
+    {
+      "id": "boss_huggingface",
+      "name": "拥抱真人",
+      "title": "拥抱观观主",
+      "sect_id": "huggingface_temple",
+      "level": 78,
+      "path": "/images/portraits/bosses/boss_huggingface.png"
+    },
+    {
+      "id": "boss_mistral",
+      "name": "米斯特拉",
+      "title": "风暴宗宗主",
+      "sect_id": "mistral_storm",
+      "level": 85,
+      "path": "/images/portraits/bosses/boss_mistral.png"
+    },
+    {
+      "id": "boss_together",
+      "name": "舟翁·维平",
+      "title": "同舟会盟主",
+      "sect_id": "together_sail",
+      "level": 72,
+      "path": "/images/portraits/bosses/boss_together.png"
+    },
+    {
+      "id": "boss_replicate",
+      "name": "衍化老人",
+      "title": "衍化盟盟主",
+      "sect_id": "replicate_evolve",
+      "level": 68,
+      "path": "/images/portraits/bosses/boss_replicate.png"
+    },
+    {
+      "id": "boss_stability",
+      "name": "稳心圣女·艾玛",
+      "title": "持心门当代掌门",
+      "sect_id": "stability_garden",
+      "level": 63,
+      "path": "/images/portraits/bosses/boss_stability.png"
+    },
+    {
+      "id": "boss_baichuan",
+      "name": "王小川·百川海主",
+      "title": "百川海主",
+      "sect_id": "baichuan_sea",
+      "level": 80,
+      "path": "/images/portraits/bosses/boss_baichuan.png"
+    },
+    {
+      "id": "boss_yi_kaifu",
+      "name": "李开峰",
+      "title": "万物峰祖师",
+      "sect_id": "yi_peak",
+      "level": 90,
+      "path": "/images/portraits/bosses/boss_yi_kaifu.png"
+    },
+    {
+      "id": "boss_step",
+      "name": "姜大昕·阶星仙翁",
+      "title": "阶星阁阁主",
+      "sect_id": "step_star",
+      "level": 88,
+      "path": "/images/portraits/bosses/boss_step.png"
+    },
+    {
+      "id": "boss_minimax",
+      "name": "闫极道祖",
+      "title": "微极派祖师",
+      "sect_id": "minimax_micro",
+      "level": 82,
+      "path": "/images/portraits/bosses/boss_minimax.png"
+    },
+    {
+      "id": "boss_sensetime",
+      "name": "商汤大圣",
+      "title": "商汤殿殿主",
+      "sect_id": "sensetime_hall",
+      "level": 92,
+      "path": "/images/portraits/bosses/boss_sensetime.png"
+    },
+    {
+      "id": "boss_xai_grok",
+      "name": "玄道魔主·马克丝",
+      "title": "玄道宫宫主",
+      "sect_id": "xai_void",
+      "level": 120,
+      "path": "/images/portraits/bosses/boss_xai_grok.png"
+    },
+    {
+      "id": "boss_perplexity",
+      "name": "迷踪散人",
+      "title": "迷踪派主",
+      "sect_id": "perplexity_trail",
+      "level": 76,
+      "path": "/images/portraits/bosses/boss_perplexity.png"
+    },
+    {
+      "id": "boss_inflection",
+      "name": "转折天尊·里德",
+      "title": "转折宫主",
+      "sect_id": "inflection_turn",
+      "level": 70,
+      "path": "/images/portraits/bosses/boss_inflection.png"
+    },
+    {
+      "id": "boss_character_mask",
+      "name": "千面舞者·诺姆",
+      "title": "千面殿主",
+      "sect_id": "character_mask",
+      "level": 66,
+      "path": "/images/portraits/bosses/boss_character_mask.png"
+    },
+    {
+      "id": "boss_groq",
+      "name": "极速僧·乔纳森",
+      "title": "极速门门主",
+      "sect_id": "groq_speed",
+      "level": 74,
+      "path": "/images/portraits/bosses/boss_groq.png"
+    },
+    {
+      "id": "boss_final_void",
+      "name": "界外神祇",
+      "title": "跨界至高存在",
+      "sect_id": "xai_void",
+      "level": 180,
+      "path": "/images/portraits/bosses/boss_final_void.png"
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "entry-bg",
+      "name": "进入游戏背景",
+      "path": "/images/backgrounds/entry-bg.png",
+      "note": "半透明低对比水墨仙城背景,适合作为 UI 底图。"
+    }
+  ]
+}

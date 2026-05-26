@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# 数据库(包含用户密码 hash + 明文 api_key,绝不能 commit)
+backend/data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Editors
+.vscode/
+.idea/
+.claude/
+.ui-review-screenshots/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

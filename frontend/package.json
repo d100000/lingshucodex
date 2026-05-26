@@ -1,0 +1,22 @@
+{
+  "name": "lingshu-codex-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.5",
+    "pinia": "^2.2.4",
+    "naive-ui": "^2.41.0",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8",
+    "@vitejs/plugin-vue": "^5.1.4"
+  }
+}
