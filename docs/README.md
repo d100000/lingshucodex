@@ -14,7 +14,13 @@
 | [GETTING_STARTED.md](./GETTING_STARTED.md) | 新玩家 | 从 0 到第一场战斗 |
 | [PLAYER_GUIDE.md](./PLAYER_GUIDE.md) | 老玩家 | 攻略、Boss 解析、隐藏内容 |
 | [TOKEN_CULTIVATION_PRODUCT_PLAN.md](./TOKEN_CULTIVATION_PRODUCT_PLAN.md) | 策划/开发 | 燃灵队列、小说化修行、token 转修为改造方案 |
+| [COMPLETE_GAMEPLAY_MASTER_DESIGN_AND_REVIEW.md](./COMPLETE_GAMEPLAY_MASTER_DESIGN_AND_REVIEW.md) | 策划/开发/叙事/数值 | 完整玩法总案、主线落地规格、数值与逻辑 Review |
+| [GAMEPLAY_SYNTHESIS_REFERENCE_RECOMMENDATIONS.md](./GAMEPLAY_SYNTHESIS_REFERENCE_RECOMMENDATIONS.md) | 策划/产品/开发/投资评审 | 玩法融合总结、参考游戏来源、优缺点分析与落地优先级 |
 | [PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md](./PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md) | 策划/叙事/开发 | 玩家身世、五宗入门背景、固定羁绊与下一轮触发方案 |
+| [SECT_DUNGEON_UNIFICATION_CAMPAIGN_DESIGN.md](./SECT_DUNGEON_UNIFICATION_CAMPAIGN_DESIGN.md) | 策划/叙事/关卡 | 门派副本、三条外宗故事线与四宗统一主线 |
+| [PLAYER_VIEW_SECT_DUNGEON_ROUTEBOOK.md](./PLAYER_VIEW_SECT_DUNGEON_ROUTEBOOK.md) | 策划/关卡/前端 | 玩家视角的五门派副本路线、节点、选择、Boss 与盟印结算 |
+| [LEVEL_GATED_MAIN_STORY_DUNGEON_CAMPAIGN.md](./LEVEL_GATED_MAIN_STORY_DUNGEON_CAMPAIGN.md) | 策划/数值/关卡 | 修为卡点、打怪动机、主线副本、破境心魔与四宗归盟节奏 |
+| [MAP_LEVEL_NUMERICAL_PROGRESSION_REDESIGN.md](./MAP_LEVEL_NUMERICAL_PROGRESSION_REDESIGN.md) | 策划/数值/战斗/前后端 | 地图等级、怪物等级、Boss 等级、玩家数值与扫荡收益重设计 |
 
 ---
 
@@ -116,5 +122,5 @@ frontend/src/views/NotFound.vue        404
 
 ---
 
-**最后更新**:2026-05-24
+**最后更新**:2026-05-27
 **当前版本**:v5.1

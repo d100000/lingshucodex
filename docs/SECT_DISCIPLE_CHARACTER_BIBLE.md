@@ -3,7 +3,9 @@
 版本: v0.1  
 用途: 地图 NPC、弟子画像批量生成、本命书章节、宗门关系任务、切磋/寒暄/传道互动。
 
-> 玩家身世、五宗入门背景与固定羁绊主线见: [《灵枢笔录》玩家身世、门派背景与固定羁绊故事线设计](./PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md)。
+> 玩家身世、五宗入门背景与固定羁绊主线见: [《灵枢笔录》玩家身世、门派背景与固定羁绊故事线设计](./PLAYER_BACKGROUND_AND_FIXED_BONDS_DESIGN.md)。  
+> 门派正传副本与四宗统一主线见: [《灵枢笔录》门派副本与四宗统一主线设计](./SECT_DUNGEON_UNIFICATION_CAMPAIGN_DESIGN.md)。  
+> 玩家视角副本路线、节点与结局见: [《灵枢笔录》玩家视角门派副本路线书](./PLAYER_VIEW_SECT_DUNGEON_ROUTEBOOK.md)。
 
 ## 设计目标
 

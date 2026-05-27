@@ -15,6 +15,7 @@ import FortuneEvent from '../components/FortuneEvent.vue'
 import BottomSheet from '../components/BottomSheet.vue'
 import { openFeedback, vibrate } from '../utils/mobile.js'
 import { enemyPreview, enemyPortraitRef, openCharacterPreview } from '../utils/characterPreview.js'
+import { mapForLevel } from '../data/exploreMaps.js'
 
 const router = useRouter()
 const msg = useMessage()
@@ -25,13 +26,15 @@ const enemies = ref([])
 const hoveredEnemy = ref(null)
 const selectedEnemy = ref(null)   // 点击锁定查看详情(用于移动端无悬停)
 const playerPos = ref({ x: 50, y: 50 })
-const refreshing = ref(false)
+const autoSpawning = ref(false)
 const startingBattle = ref(false)
 const playerAttacking = ref(false)  // ★ 玩家冲刺/攻击动画标志
+const mapLoreVisible = ref(false)
 const mapPan = ref({ x: 0, y: 0 })
 const panning = ref(false)
 const isMobileMap = ref(false)
 let panStart = null
+let autoSpawnTimer = null
 
 // ★ 奇遇系统 — 60s 自动 LLM 触发
 const fortuneVisible = ref(false)
@@ -40,11 +43,39 @@ const fortuneApplied = ref({})
 let fortuneTimer = null
 let fortuneInterval = 60_000  // 60s 一次
 
+const TARGET_MONSTER_COUNT = 10
+const AUTO_SPAWN_INTERVAL_MS = 20_000
+
 // 详情面板显示的怪物:优先用「点击选中」,其次「悬停预览」
 const displayEnemy = computed(() => selectedEnemy.value || hoveredEnemy.value)
+const monsterCount = computed(() => enemies.value.filter(e => !e.is_npc).length)
+const currentMap = computed(() => mapForLevel(character.value?.level || 1))
+const mapStyleVars = computed(() => ({
+  '--map-accent': currentMap.value.style.accent,
+  '--map-accent-2': currentMap.value.style.accent2,
+  '--map-bg-a': currentMap.value.style.bgA,
+  '--map-bg-b': currentMap.value.style.bgB,
+  '--map-bg-c': currentMap.value.style.bgC,
+  '--map-glow': currentMap.value.style.glow,
+}))
 
 const playerColor = computed(() => character.value?.sect === 'tianji' ? '#FFB454' : '#D4A24C')
 const playerPortraitId = computed(() => `${character.value?.sect || 'canglan'}/${character.value?.realm || 'qi'}`)
+
+const TILE_POSITIONS = [
+  { x: 8, y: 12 }, { x: 14, y: 22 }, { x: 80, y: 12 }, { x: 88, y: 20 },
+  { x: 24, y: 28 }, { x: 34, y: 34 }, { x: 18, y: 44 }, { x: 68, y: 30 },
+  { x: 76, y: 42 }, { x: 22, y: 66 }, { x: 62, y: 66 }, { x: 84, y: 62 },
+  { x: 12, y: 78 }, { x: 48, y: 82 }, { x: 58, y: 78 }, { x: 38, y: 54 },
+  { x: 70, y: 56 }, { x: 30, y: 74 }, { x: 92, y: 46 }, { x: 6, y: 52 },
+]
+const mapTiles = computed(() => {
+  const terrain = currentMap.value.terrain || []
+  return TILE_POSITIONS.map((pos, index) => ({
+    ...pos,
+    ...(terrain[index % Math.max(1, terrain.length)] || { type: 'relic', icon: '✦' }),
+  }))
+})
 
 let moveTimer = null
 // 控制位置更新节奏:300ms tick,CSS transition 接管平滑过渡,
@@ -65,7 +96,8 @@ onMounted(async () => {
     return router.replace('/onboarding')
   }
 
-  await refresh()
+  await spawnEnemies(TARGET_MONSTER_COUNT, { replace: true })
+  startAutoSpawnLoop()
 
   // 启动 60s 奇遇定时
   scheduleFortune()
@@ -106,6 +138,7 @@ onMounted(async () => {
 onUnmounted(() => {
   if (moveTimer) clearInterval(moveTimer)
   if (fortuneTimer) clearTimeout(fortuneTimer)
+  if (autoSpawnTimer) clearInterval(autoSpawnTimer)
   window.removeEventListener('resize', syncMapLayout)
   window.removeEventListener('orientationchange', syncMapLayout)
 })
@@ -157,18 +190,50 @@ function onFortuneClose() {
   fortuneVisible.value = false
 }
 
-async function refresh() {
-  refreshing.value = true
+function openMapLore() {
+  mapLoreVisible.value = true
+}
+
+function stampSpawns(list) {
+  const batch = `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`
+  return list.map((e, index) => ({
+    ...e,
+    spawn_key: `${e.id}_${batch}_${index}`,
+  }))
+}
+
+async function spawnEnemies(count, { replace = false, silent = false } = {}) {
+  if (autoSpawning.value) return
+  autoSpawning.value = true
   try {
-    // 5-10 只随机
-    const count = 5 + Math.floor(Math.random() * 6)
     const { data } = await exploreApi.spawn(count)
-    enemies.value = data
+    const spawned = stampSpawns(Array.isArray(data) ? data : [])
+    if (replace) {
+      enemies.value = spawned
+      return
+    }
+    const existingIds = new Set(enemies.value.map(e => e.id))
+    const incoming = spawned.filter(e => !existingIds.has(e.id))
+    enemies.value = [...enemies.value, ...incoming]
   } catch (e) {
-    msg.error('刷新地图失败: ' + e.message)
+    if (silent) console.warn('[explore] 自动补怪失败:', e.message)
+    else msg.error('地图妖兽生成失败: ' + e.message)
   } finally {
-    refreshing.value = false
+    autoSpawning.value = false
   }
+}
+
+async function checkAndAutoSpawn() {
+  if (startingBattle.value || fortuneVisible.value || autoSpawning.value) return
+  const missing = TARGET_MONSTER_COUNT - monsterCount.value
+  if (missing <= 0) return
+  await spawnEnemies(Math.max(4, missing + 2), { silent: true })
+}
+
+function startAutoSpawnLoop() {
+  if (autoSpawnTimer) clearInterval(autoSpawnTimer)
+  autoSpawnTimer = setInterval(checkAndAutoSpawn, AUTO_SPAWN_INTERVAL_MS)
+  checkAndAutoSpawn()
 }
 
 // ★ v3:不再自动开战 — 完全由玩家主动点详情面板「开战」按钮触发
@@ -334,12 +399,12 @@ function threatLevel(enemy) {
 </script>
 
 <template>
-  <div class="explore-page">
+  <div class="explore-page" :style="mapStyleVars">
     <!-- ★ 门派背景图 -->
     <SectBackground :sect-id="character?.sect || 'canglan'" overlay="normal" :opacity="0.45" />
 
     <div class="brand-bar">
-      <!-- ★ 顶栏改为 3 段式 grid:返回 | Logo居中 | 刷新地图,彻底避免遮挡 -->
+      <!-- ★ 顶栏改为 3 段式 grid:返回 | Logo居中 | 地图工具,彻底避免遮挡 -->
       <div class="bar-slot bar-left">
         <BackButton to="/home" label="回主城" inline />
       </div>
@@ -347,21 +412,21 @@ function threatLevel(enemy) {
         <Logo :size="32" :text-size="16" />
       </div>
       <div class="bar-slot bar-right">
-        <button class="text-btn" :disabled="refreshing" @click="refresh">
-          {{ refreshing ? '刷新中...' : '刷新地图' }}
-        </button>
+        <button class="text-btn map-lore-btn" @click="openMapLore">地图志</button>
         <button class="text-btn center-btn" @click="resetMapPan">回到中心</button>
       </div>
     </div>
 
-    <div class="hint">
-      {{ isMobileMap ? '点击目标查看详情,拖拽地图调整视野。' : '鼠标悬停看属性 · 单击锁定 · 双击迎战' }}
+    <div class="hint map-hint">
+      <strong>{{ currentMap.name }}</strong>
+      <span>Lv.{{ currentMap.levelMin }}-{{ currentMap.levelMax }} · {{ currentMap.short }}</span>
     </div>
 
     <!-- 地图 -->
     <div
       class="map"
-      :class="{ panning }"
+      :class="['map-style-' + currentMap.style.key, { panning }]"
+      :style="mapStyleVars"
       @mouseleave="hideInfo"
       @pointerdown="onMapPointerDown"
       @pointermove="onMapPointerMove"
@@ -376,46 +441,21 @@ function threatLevel(enemy) {
       <div class="map-bg-pixel">
         <div class="pixel-grid"></div>
         <div class="pixel-tiles">
-          <!-- 山脉(左上)-->
-          <span class="tile tile-mountain" style="left: 8%;  top: 12%;">⛰</span>
-          <span class="tile tile-mountain" style="left: 13%; top: 18%;">⛰</span>
-          <span class="tile tile-mountain" style="left: 78%; top: 10%;">🏔</span>
-          <span class="tile tile-mountain" style="left: 85%; top: 15%;">🏔</span>
-          <!-- 森林分布 -->
-          <span class="tile tile-tree" style="left: 24%; top: 22%;">🌲</span>
-          <span class="tile tile-tree" style="left: 32%; top: 28%;">🌳</span>
-          <span class="tile tile-tree" style="left: 18%; top: 38%;">🌲</span>
-          <span class="tile tile-tree" style="left: 68%; top: 30%;">🌳</span>
-          <span class="tile tile-tree" style="left: 74%; top: 38%;">🌲</span>
-          <span class="tile tile-tree" style="left: 22%; top: 62%;">🌳</span>
-          <span class="tile tile-tree" style="left: 60%; top: 65%;">🌲</span>
-          <span class="tile tile-tree" style="left: 80%; top: 60%;">🌳</span>
-          <span class="tile tile-tree" style="left: 12%; top: 72%;">🌲</span>
-          <span class="tile tile-tree" style="left: 88%; top: 78%;">🌳</span>
-          <!-- 水域(中下方) -->
-          <span class="tile tile-water" style="left: 38%; top: 78%;">🌊</span>
-          <span class="tile tile-water" style="left: 46%; top: 82%;">🌊</span>
-          <span class="tile tile-water" style="left: 54%; top: 80%;">🌊</span>
-          <!-- 岩石 -->
-          <span class="tile tile-rock" style="left: 42%; top: 25%;">🪨</span>
-          <span class="tile tile-rock" style="left: 68%; top: 55%;">🪨</span>
-          <span class="tile tile-rock" style="left: 30%; top: 70%;">🪨</span>
-          <!-- 花草点缀 -->
-          <span class="tile tile-flower" style="left: 35%; top: 45%;">🌸</span>
-          <span class="tile tile-flower" style="left: 64%; top: 48%;">🌼</span>
-          <span class="tile tile-flower" style="left: 26%; top: 55%;">🌺</span>
-          <span class="tile tile-grass" style="left: 50%; top: 38%;">🌿</span>
-          <span class="tile tile-grass" style="left: 56%; top: 62%;">🍃</span>
-          <span class="tile tile-grass" style="left: 44%; top: 60%;">🌾</span>
-          <!-- 远处建筑 / 神秘地物 -->
-          <span class="tile tile-shrine" style="left: 90%; top: 45%;">⛩️</span>
-          <span class="tile tile-shrine" style="left: 6%;  top: 50%;">🏮</span>
+          <span
+            v-for="(tile, index) in mapTiles"
+            :key="`${currentMap.id}_${index}`"
+            class="tile"
+            :class="`tile-${tile.type}`"
+            :style="{ left: tile.x + '%', top: tile.y + '%' }"
+          >{{ tile.icon }}</span>
           <!-- 中央修真台(玩家所在地)-->
           <div class="player-platform"></div>
-          <!-- 区域标签(纯视觉提示) -->
-          <span class="zone-label" style="left: 16%; top: 20%; color: #52B788;">初级区</span>
-          <span class="zone-label" style="left: 48%; top: 50%; color: #FFB454;">中级区</span>
-          <span class="zone-label" style="left: 78%; top: 75%; color: #C03F3F;">高级区</span>
+          <span
+            v-for="zone in currentMap.zones"
+            :key="zone.label"
+            class="zone-label"
+            :style="{ left: zone.x + '%', top: zone.y + '%', color: zone.color }"
+          >{{ zone.label }}</span>
         </div>
       </div>
 
@@ -441,7 +481,7 @@ function threatLevel(enemy) {
       <!-- 怪物 -->
       <div
         v-for="e in enemies"
-        :key="e.id"
+        :key="e.spawn_key || e.id"
         class="enemy-marker"
         :class="[
           'tier-' + e.tier,
@@ -575,6 +615,50 @@ function threatLevel(enemy) {
       </template>
     </BottomSheet>
 
+    <BottomSheet
+      :show="mapLoreVisible"
+      :title="`${currentMap.name} · 地图志`"
+      @close="mapLoreVisible = false"
+    >
+      <div class="map-lore-sheet" :style="mapStyleVars">
+        <div class="map-lore-hero">
+          <div>
+            <span class="map-lore-kicker">Lv.{{ currentMap.levelMin }}-{{ currentMap.levelMax }}</span>
+            <h2>{{ currentMap.name }}</h2>
+            <p>{{ currentMap.short }}</p>
+          </div>
+        </div>
+
+        <section class="map-lore-block">
+          <h4>地图介绍</h4>
+          <p>{{ currentMap.intro }}</p>
+        </section>
+
+        <section class="map-lore-block">
+          <h4>门派渊源</h4>
+          <p>{{ currentMap.origin }}</p>
+          <div class="map-lore-tags">
+            <span v-for="sect in currentMap.sects" :key="sect">{{ sect }}</span>
+          </div>
+        </section>
+
+        <section class="map-lore-grid">
+          <div>
+            <h4>镇守 Boss</h4>
+            <ul>
+              <li v-for="boss in currentMap.bosses" :key="boss">{{ boss }}</li>
+            </ul>
+          </div>
+          <div>
+            <h4>核心物资</h4>
+            <ul>
+              <li v-for="resource in currentMap.resources" :key="resource">{{ resource }}</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </BottomSheet>
+
     <!-- ★ 奇遇弹窗 -->
     <FortuneEvent
       :visible="fortuneVisible"
@@ -642,13 +726,32 @@ function threatLevel(enemy) {
 }
 .text-btn:hover:not(:disabled) { color: #fff; border-color: #D4A24C; }
 .text-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.map-lore-btn {
+  border-color: color-mix(in srgb, var(--map-accent), transparent 45%);
+  color: color-mix(in srgb, var(--map-accent), #fff 18%);
+  background: color-mix(in srgb, var(--map-accent), transparent 88%);
+}
 
 .hint {
-  background: rgba(127,199,232,0.06);
-  border-left: 3px solid #7FC7E8;
+  background: color-mix(in srgb, var(--map-accent-2), transparent 92%);
+  border-left: 3px solid var(--map-accent-2);
   padding: 8px 14px; border-radius: 4px;
   color: #aaa; font-size: 12px;
   margin-bottom: 8px;
+}
+.map-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.map-hint strong {
+  color: var(--map-accent);
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+.map-hint span {
+  color: #B8C7E0;
 }
 
 .map {
@@ -656,11 +759,10 @@ function threatLevel(enemy) {
   flex: 1;
   min-height: 600px;
   background:
-    /* 多层渐变:深夜 + 山影 */
-    radial-gradient(ellipse at 50% 30%, rgba(40, 60, 100, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at center, #1f2a44 0%, #0a1428 70%, #050810 100%);
+    radial-gradient(ellipse at 50% 30%, var(--map-glow) 0%, transparent 50%),
+    radial-gradient(ellipse at center, var(--map-bg-a) 0%, var(--map-bg-b) 66%, var(--map-bg-c) 100%);
   border-radius: 16px;
-  border: 1px solid rgba(212,162,76,0.2);
+  border: 1px solid color-mix(in srgb, var(--map-accent), transparent 72%);
   overflow: hidden;
   cursor: crosshair;
   touch-action: none;
@@ -679,19 +781,18 @@ function threatLevel(enemy) {
 .map-bg-pixel {
   position: absolute; inset: 0;
   pointer-events: none;
-  /* 双层渐变模拟地形:草地(青) → 远山(墨) + 中央光斑(修真台) */
   background:
-    radial-gradient(circle at 50% 50%, rgba(212,162,76,0.05) 0%, transparent 30%),
-    radial-gradient(ellipse at 50% 30%, rgba(82,183,136,0.04) 0%, transparent 40%),
-    radial-gradient(ellipse at 30% 80%, rgba(127,199,232,0.03) 0%, transparent 35%);
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--map-accent), transparent 91%) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 30%, color-mix(in srgb, var(--map-accent-2), transparent 94%) 0%, transparent 40%),
+    radial-gradient(ellipse at 30% 80%, color-mix(in srgb, var(--map-accent), transparent 96%) 0%, transparent 35%);
 }
 
 /* 像素网格 — 半透明,提供"地图坐标"感 */
 .pixel-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(212,162,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,162,76,0.04) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--map-accent), transparent 94%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--map-accent), transparent 94%) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: 0 0;
   /* 中心点深一点点,营造"修真台"中心感 */
@@ -715,6 +816,11 @@ function threatLevel(enemy) {
 }
 .tile-mountain { font-size: 42px; opacity: 0.18; }
 .tile-tree     { font-size: 30px; opacity: 0.25; }
+.tile-cave,
+.tile-rift,
+.tile-dragon,
+.tile-demon,
+.tile-star     { font-size: 34px; opacity: 0.28; }
 .tile-water    {
   font-size: 26px; opacity: 0.25;
   animation: tile-wave 4s ease-in-out infinite;
@@ -723,6 +829,18 @@ function threatLevel(enemy) {
 .tile-flower   { font-size: 20px; opacity: 0.30; }
 .tile-grass    { font-size: 18px; opacity: 0.22; }
 .tile-shrine   { font-size: 34px; opacity: 0.28; }
+.tile-relic,
+.tile-sword,
+.tile-glow,
+.tile-thunder,
+.tile-fire     { font-size: 28px; opacity: 0.30; }
+.tile-mist,
+.tile-wind     { font-size: 24px; opacity: 0.24; }
+.tile-poison,
+.tile-ghost,
+.tile-beast,
+.tile-bird,
+.tile-herb     { font-size: 24px; opacity: 0.26; }
 
 .zone-label {
   position: absolute;
@@ -749,8 +867,8 @@ function threatLevel(enemy) {
   width: 140px; height: 140px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px dashed rgba(212, 162, 76, 0.25);
-  background: radial-gradient(circle, rgba(212, 162, 76, 0.06) 0%, transparent 70%);
+  border: 1px dashed color-mix(in srgb, var(--map-accent), transparent 68%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--map-accent), transparent 91%) 0%, transparent 70%);
   animation: platform-pulse 4s ease-in-out infinite;
 }
 @keyframes platform-pulse {
@@ -1114,6 +1232,81 @@ function threatLevel(enemy) {
   color: #7FC7E8;
   background: rgba(127,199,232,0.05);
   padding: 6px 10px; border-radius: 4px;
+}
+
+.map-lore-sheet {
+  display: grid;
+  gap: 14px;
+}
+.map-lore-hero {
+  min-height: 132px;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--map-accent), transparent 62%);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 72% 28%, var(--map-glow), transparent 42%),
+    linear-gradient(135deg, var(--map-bg-a), var(--map-bg-b) 58%, var(--map-bg-c));
+}
+.map-lore-kicker {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: var(--map-accent-2);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.map-lore-hero h2 {
+  margin: 0 0 6px;
+  color: var(--map-accent);
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-family: 'STKaiti', 'KaiTi', serif;
+}
+.map-lore-hero p,
+.map-lore-block p {
+  margin: 0;
+  color: #D5DEEF;
+  line-height: 1.7;
+}
+.map-lore-block,
+.map-lore-grid > div {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(255,255,255,0.035);
+}
+.map-lore-block h4,
+.map-lore-grid h4 {
+  margin: 0 0 8px;
+  color: var(--map-accent);
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+.map-lore-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.map-lore-tags span {
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--map-accent), transparent 58%);
+  color: color-mix(in srgb, var(--map-accent), #fff 16%);
+  background: color-mix(in srgb, var(--map-accent), transparent 90%);
+  font-size: 12px;
+}
+.map-lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.map-lore-grid ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #C9D4E8;
+  line-height: 1.8;
 }
 /* 点击锁定的面板更显眼 */
 .info-panel.sticky {
