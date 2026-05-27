@@ -825,7 +825,7 @@ Boss 不应一开始只是列表。推荐改为:
   "byok_policy": {
     "base_url": "...",
     "api_key_encrypted": "...",
-    "api_key_masked": "sk-***1234",
+    "api_key_masked": "****1234",
     "budget_daily": 50000,
     "budget_monthly": 1000000,
     "confirm_threshold": 10000
@@ -970,4 +970,3 @@ Key 接入可信
 ```
 
 这条线打通后,游戏会从“AI 修仙概念 demo”变成“用户愿意继续刷、继续写、继续突破”的产品。
-

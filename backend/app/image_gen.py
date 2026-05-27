@@ -76,7 +76,7 @@ class ImageGenerator:
         if not self.api_key:
             raise ValueError(
                 "IMAGE_API_KEY 未配置 — 请在 backend/.env 里添加:\n"
-                "  IMAGE_API_KEY=sk-..."
+                "  IMAGE_API_KEY=<your-image-api-key>"
             )
 
     # ------------------------------------------------------------

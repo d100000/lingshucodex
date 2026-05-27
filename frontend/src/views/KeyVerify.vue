@@ -275,7 +275,7 @@ const totalCount = computed(() => modelStates.value.length)
 
         <label class="field">
           <span>API Key</span>
-          <input v-model="apiKey" :disabled="verifying" type="password" :placeholder="sect.byok_hint?.key_format || 'sk-...'" />
+          <input v-model="apiKey" :disabled="verifying" type="password" :placeholder="sect.byok_hint?.key_format || 'API Key'" />
         </label>
 
         <div class="form-meta">

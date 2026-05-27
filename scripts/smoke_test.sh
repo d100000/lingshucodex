@@ -12,7 +12,7 @@ PASS="smoke123"
 BASE_URL="${BASE_URL:-https://bobdong.cn/v1}"
 API_KEY="${API_KEY:-}"
 if [ -z "$API_KEY" ]; then
-  echo "请先设置 API_KEY 环境变量,例如: API_KEY=sk-... bash scripts/smoke_test.sh"
+  echo "请先设置 API_KEY 环境变量,例如: API_KEY=<your-api-key> bash scripts/smoke_test.sh"
   exit 1
 fi
 

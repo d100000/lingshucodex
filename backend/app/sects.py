@@ -311,19 +311,19 @@ def get_destiny_skill(sect_id: str):
 
 # 各派对应厂商提示(用于 UI 显示"应填什么 key")
 SECT_TO_PROVIDER_HINT = {
-    "canglan":  {"provider": "anthropic", "key_format": "sk-ant-... 或网关 sk-...",
+    "canglan":  {"provider": "anthropic", "key_format": "Anthropic API Key 或网关 API Key",
                  "default_base_url": "https://bobdong.cn/v1",
                  "official_base_url": "https://api.anthropic.com"},
-    "tianji":   {"provider": "openai",   "key_format": "sk-... (OpenAI)",
+    "tianji":   {"provider": "openai",   "key_format": "OpenAI API Key",
                  "default_base_url": "https://bobdong.cn/v1",
                  "official_base_url": "https://api.openai.com/v1"},
-    "xuanji":   {"provider": "deepseek", "key_format": "sk-... (DeepSeek)",
+    "xuanji":   {"provider": "deepseek", "key_format": "DeepSeek API Key",
                  "default_base_url": "https://bobdong.cn/v1",
                  "official_base_url": "https://api.deepseek.com"},
     "qingming": {"provider": "zhipu",    "key_format": "智谱长串",
                  "default_base_url": "https://bobdong.cn/v1",
                  "official_base_url": "https://open.bigmodel.cn/api/paas/v4"},
-    "yueyin":   {"provider": "moonshot", "key_format": "sk-... (Moonshot)",
+    "yueyin":   {"provider": "moonshot", "key_format": "Moonshot API Key",
                  "default_base_url": "https://bobdong.cn/v1",
                  "official_base_url": "https://api.moonshot.cn/v1"},
 }

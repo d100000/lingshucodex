@@ -769,7 +769,7 @@ async def choose_sect(req: ChooseSectRequest, current_user: dict = Depends(get_c
 
     # 返回时隐藏 api_key
     safe = {k: v for k, v in character.items() if k != "api_key"}
-    safe["api_key_masked"] = "sk-***" + req.api_key.strip()[-4:]
+    safe["api_key_masked"] = "****" + req.api_key.strip()[-4:]
     return {"data": safe}
 
 
@@ -799,7 +799,7 @@ async def get_me(current_user: dict = Depends(get_current_user)):
     # 附�� attributes 元数据(让��端不用 hardcode)
     safe["_attributes_meta"] = ATTRIBUTES
     if char.get("api_key"):
-        safe["api_key_masked"] = "sk-***" + char["api_key"][-4:]
+        safe["api_key_masked"] = "****" + char["api_key"][-4:]
     return {"data": safe}
 
 
@@ -1637,12 +1637,12 @@ async def update_my_byok(req: UpdateByokRequest, current_user: dict = Depends(ge
         })
 
     # 保存
-    old_masked = "sk-***" + char.get("api_key", "")[-4:] if char.get("api_key") else "(空)"
+    old_masked = "****" + char.get("api_key", "")[-4:] if char.get("api_key") else "(空)"
     char["base_url"] = req.base_url.strip().rstrip("/")
     char["api_key"] = req.api_key.strip()
     save_character(user_id, char)
 
-    new_masked = "sk-***" + req.api_key.strip()[-4:]
+    new_masked = "****" + req.api_key.strip()[-4:]
     return {"data": {
         "updated": True,
         "old_api_key_masked": old_masked,

@@ -846,7 +846,7 @@ WS 服务端 → 客户端事件类型见 § 5.7。
 
 ```bash
 LLM_BASE_URL=https://bobdong.cn/v1
-LLM_API_KEY=sk-...               # 仅用于 fallback(BYOK 用户用自己的)
+LLM_API_KEY=<your-llm-api-key>   # 仅用于 fallback(BYOK 用户用自己的)
 HOST=127.0.0.1
 PORT=8020
 CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
@@ -896,7 +896,7 @@ raise HTTPException(404, {
 
 ### 10.3 安全约定
 
-- **api_key 永不返前端**,只返 `api_key_masked: "sk-***XXXX"`
+- **api_key 永不返前端**,只返 `api_key_masked: "****XXXX"`
 - 修改 byok 时**前后双重校验**:前端流式 verify-key 全过 + 后端 probe 二次校验
 - 战斗 LLM 调用使用 character 自己的 api_key(BYOK),不读全局 env
 

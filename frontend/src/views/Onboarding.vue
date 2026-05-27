@@ -263,7 +263,7 @@ function backToForm() {
 
         <label class="field">
           <span class="lbl">API Key</span>
-          <input v-model="apiKey" type="password" placeholder="sk-..." />
+          <input v-model="apiKey" type="password" placeholder="API Key" />
           <span class="hint">您的 Key 仅用于本游戏战斗推理,平台不存储到数据库</span>
         </label>
 

@@ -349,7 +349,7 @@ function presetUrl(url) {
 
           <label class="field">
             <span>新 API Key</span>
-            <input v-model="apiKey" :disabled="verifying" type="password" placeholder="sk-..." />
+            <input v-model="apiKey" :disabled="verifying" type="password" placeholder="API Key" />
           </label>
 
           <div class="action-row">
